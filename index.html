@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MiMascotita · tienda de barrio</title>
+  <meta name="description" content="MiMascotita, tienda de barrio para el invierno. Catálogo de alimento, ropa y accesorios, bono de temporada y pedido.">
+  <meta name="theme-color" content="#f3eee6">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%239C4630'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='32' fill='%23FBF8F3' font-family='Georgia'%3EM%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,520;0,9..144,560;1,9..144,520&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <div class="fijo">
+    <button id="cinta" class="cinta" type="button" data-accion="abrir-popup">Temporada de invierno · pide el bono del 15%</button>
+    <div class="barra-superior">
+      <header class="ancho cabecera">
+        <a class="marca" href="#/">
+          <span class="monograma" aria-hidden="true">M</span>
+          <span>
+            <span class="marca-nombre">MiMascotita</span>
+            <span class="marca-baja">tienda de barrio</span>
+          </span>
+        </a>
+        <button id="menu-boton" class="menu" type="button" data-accion="menu" aria-expanded="false" aria-controls="menu-principal">Menú</button>
+        <nav id="menu-principal" class="nav" aria-label="Principal">
+          <a href="#/" data-nav="inicio">Inicio</a>
+          <a href="#/catalogo" data-nav="coleccion">Colección</a>
+          <a href="#/carrito" data-nav="pedido">Pedido</a>
+        </nav>
+        <button id="bolsa" class="bolsa" type="button" data-accion="abrir-cajon" aria-label="Abrir pedido, 0 piezas">
+          Pedido <span id="cuenta-pedido" class="cuenta">0</span>
+        </button>
+      </header>
+    </div>
+  </div>
+
+  <main id="contenido">
+    <noscript class="noscript"><p>MiMascotita necesita JavaScript para la colección, el bono y el pedido.</p></noscript>
+
+    <section id="vista-inicio" class="vista activa">
+      <div class="ancho hero">
+        <div class="hero-texto">
+          <p class="kicker">Temporada de invierno</p>
+          <h1>Un invierno más <em>suave</em> para quien te espera en casa.</h1>
+          <p class="lead">Doce piezas de alimento, ropa y abrigo para la casa. Elegidas con calma, como en el mostrador de una tienda pequeña.</p>
+          <div class="acciones">
+            <a class="boton" href="#/catalogo">Ver la colección</a>
+            <button class="boton secundario" type="button" data-accion="abrir-popup">Quiero el bono del 15%</button>
+          </div>
+        </div>
+        <figure class="marco hero-foto">
+          <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1400&q=80" alt="Perro y gato juntos, en una luz cálida" width="1200" height="1500" fetchpriority="high">
+          <figcaption class="leyenda">Compañía para los días cortos.</figcaption>
+        </figure>
+      </div>
+
+      <div class="ancho sellos">
+        <article class="sello">
+          <strong>Retiro el mismo día</strong>
+          <p class="nota">Pasa por la tienda y te dejamos el pedido listo.</p>
+        </article>
+        <article class="sello">
+          <strong>Tallas con calma</strong>
+          <p class="nota">Si la ropa no queda bien, tienes 8 días para cambiar la talla.</p>
+        </article>
+        <article class="sello">
+          <strong>Consejo de mostrador</strong>
+          <p class="nota">Te ayudamos a elegir sin apurarte.</p>
+        </article>
+      </div>
+
+      <div class="ancho seccion">
+        <div class="seccion-cabeza">
+          <div>
+            <p class="kicker">Para quién</p>
+            <h2>Entra por la puerta de tu mascota.</h2>
+          </div>
+        </div>
+        <div class="tipos">
+          <a class="tipo" href="#/catalogo?mascota=perro">
+            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=900&q=80" alt="" data-nombre="Perros">
+            <span>Perros</span>
+            <small>Croqueta, abrigo y paseo</small>
+          </a>
+          <a class="tipo" href="#/catalogo?mascota=gato">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=80" alt="" data-nombre="Gatos">
+            <span>Gatos</span>
+            <small>Caldo tibio y chaleco corto</small>
+          </a>
+          <a class="tipo" href="#/catalogo?mascota=pequeños">
+            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=900&q=80" alt="" data-nombre="Pequeños">
+            <span>Pequeños</span>
+            <small>Pijama y mantas para quien cabe en un brazo</small>
+          </a>
+        </div>
+      </div>
+
+      <div class="ancho seccion">
+        <div class="seccion-cabeza">
+          <div>
+            <p class="kicker">En la mesa y en el armario</p>
+            <h2>Cuatro piezas para empezar.</h2>
+          </div>
+          <a class="boton secundario" href="#/catalogo">Ver las doce</a>
+        </div>
+        <div id="grid-destacados" class="rejilla"></div>
+      </div>
+
+      <div class="ancho seccion" id="bono">
+        <div class="seccion-cabeza">
+          <div>
+            <p class="kicker">Bono de temporada</p>
+            <h2>15% mientras haga frío.</h2>
+          </div>
+        </div>
+        <div class="pasos">
+          <article class="paso">
+            <div class="numero">1</div>
+            <h3>Dejas tu correo</h3>
+            <p class="nota">Solo para recibir el bono de esta temporada. Nada de mensajes todos los días.</p>
+          </article>
+          <article class="paso">
+            <div class="numero">2</div>
+            <h3>Ves el código</h3>
+            <p class="nota">Aparece en la misma pantalla. En esta demostración se guarda en tu navegador.</p>
+          </article>
+          <article class="paso">
+            <div class="numero">3</div>
+            <h3>Entra en el pedido</h3>
+            <p class="nota">El 15% baja alimento, ropa y accesorios de la colección de invierno.</p>
+          </article>
+        </div>
+        <p><button class="boton" type="button" data-accion="abrir-popup">Pedir el bono</button></p>
+      </div>
+
+      <div class="ancho seccion">
+        <div class="banda">
+          <div>
+            <p class="kicker">Calle de las Gardenias 12</p>
+            <h2>El frío pasa. El cuidado se queda.</h2>
+            <p>Martes a sábado, 10:00 a 19:00. Domingos de 10:00 a 14:00. Lunes cerrado.</p>
+          </div>
+          <a class="boton" href="#/catalogo">Entrar a la colección</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="vista-catalogo" class="vista" aria-hidden="true">
+      <div class="ancho">
+        <header class="encabezado-pagina">
+          <p class="kicker">Temporada de invierno</p>
+          <h1>Doce piezas para el frío.</h1>
+          <p>Alimento, ropa y lo que abriga la casa. Filtra por mascota o por lo que estás buscando.</p>
+        </header>
+        <form id="filtros" class="filtros" role="search">
+          <label>Buscar
+            <input name="buscar" type="search" placeholder="Ave, lana, manta…" autocomplete="off">
+          </label>
+          <label>Mascota
+            <select name="mascota">
+              <option value="todos">Todas</option>
+              <option value="perro">Perro</option>
+              <option value="gato">Gato</option>
+              <option value="pequeños">Pequeños</option>
+            </select>
+          </label>
+          <label>Tipo
+            <select name="categoria">
+              <option value="todos">Todo</option>
+              <option value="alimento">Alimento</option>
+              <option value="ropa">Ropa</option>
+              <option value="accesorios">Accesorios</option>
+            </select>
+          </label>
+        </form>
+        <p id="conteo-catalogo" class="nota" aria-live="polite"></p>
+        <div id="grid-catalogo" class="rejilla"></div>
+      </div>
+    </section>
+
+    <section id="vista-producto" class="vista" aria-hidden="true">
+      <div class="ancho" id="ficha"></div>
+    </section>
+
+    <section id="vista-carrito" class="vista" aria-hidden="true">
+      <div class="ancho">
+        <header class="encabezado-pagina">
+          <p class="kicker">Reserva</p>
+          <h1>Tu pedido</h1>
+          <p>Revisa las piezas, aplica el bono y deja tus datos. No hay cobro: es el recorrido de la tienda.</p>
+        </header>
+        <div id="vacio-pedido" class="vacio" hidden>
+          <h2>Todavía no hay piezas.</h2>
+          <p>La colección de invierno está en la otra sala.</p>
+          <a class="boton" href="#/catalogo">Ver la colección</a>
+        </div>
+        <div id="pedido-listo" class="pedido-listo" hidden>
+          <p class="kicker">Reservado</p>
+          <h2>Anotamos tu pedido.</h2>
+          <p id="numero-pedido" class="codigo"></p>
+          <p id="detalle-pedido"></p>
+          <p class="nota">No hicimos ningún cobro ni apartamos stock. En la tienda real, aquí confirmaríamos el pago y la entrega.</p>
+          <button class="boton" type="button" data-accion="otro-pedido">Hacer otro pedido</button>
+        </div>
+        <form id="form-pedido" hidden>
+          <div class="pedido">
+            <div id="lineas-pedido"></div>
+            <aside class="resumen-caja">
+              <h2>Resumen</h2>
+              <div id="estado-bono"></div>
+              <div id="campos-bono" class="formulario">
+                <label>Bono de temporada
+                  <input id="codigo-bono" name="codigo" maxlength="20" autocomplete="off" placeholder="Código de temporada">
+                </label>
+                <button class="boton secundario" type="button" data-accion="aplicar-bono">Aplicar</button>
+                <button class="boton texto" type="button" data-accion="abrir-popup">Pedir el bono</button>
+                <p id="mensaje-bono"></p>
+              </div>
+              <div id="cifras"></div>
+              <fieldset>
+                <legend>Entrega</legend>
+                <label class="opcion-entrega"><input type="radio" name="entrega" value="retiro" checked> Retiro en tienda · sin costo</label>
+                <label class="opcion-entrega"><input type="radio" name="entrega" value="envio"> Envío en el barrio · $ 8.000</label>
+              </fieldset>
+              <div id="campo-direccion" hidden>
+                <label>Dirección
+                  <input name="direccion" maxlength="160" autocomplete="street-address" placeholder="Calle, barrio, referencia">
+                </label>
+              </div>
+              <label>Nombre
+                <input name="nombre" maxlength="80" autocomplete="name" required>
+              </label>
+              <label>Teléfono
+                <input name="telefono" type="tel" maxlength="30" autocomplete="tel" required>
+              </label>
+              <label>Nota para la tienda
+                <textarea name="nota" maxlength="280" placeholder="Talla, horario, una duda"></textarea>
+              </label>
+              <p id="error-pedido" class="error" hidden></p>
+              <button class="boton completo" type="submit">Reservar pedido</button>
+              <p class="nota">La reserva no cobra ni aparta stock. Sirve para recorrer el proceso.</p>
+            </aside>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sitio-pie">
+    <div class="ancho pie-grid">
+      <div>
+        <h2>MiMascotita</h2>
+        <p>Calle de las Gardenias 12, barrio El Prado.<br>Martes a sábado, 10:00 a 19:00.<br>(601) 555 0148</p>
+        <p class="nota">Tienda de demostración. Las fotos son de referencia y los precios, de este ejemplo.</p>
+      </div>
+      <div>
+        <p class="kicker">La casa</p>
+        <p><a href="#/">Inicio</a></p>
+        <p><a href="#/catalogo">Colección de invierno</a></p>
+        <p><a href="#/carrito">Tu pedido</a></p>
+      </div>
+      <form id="form-pie" class="formulario">
+        <p class="kicker">Bono de invierno</p>
+        <label>Correo electrónico
+          <input name="correo" type="email" maxlength="80" autocomplete="email" required>
+        </label>
+        <label class="check">
+          <input name="acepto" type="checkbox" required>
+          <span>Quiero el bono y las novedades de esta temporada.</span>
+        </label>
+        <p id="error-pie" class="error" hidden></p>
+        <button class="boton" type="submit">Guardar mi correo</button>
+        <p id="mensaje-pie" class="ok" hidden></p>
+      </form>
+    </div>
+  </footer>
+
+  <div id="popup" class="popup-fondo" hidden>
+    <div id="popup-dialogo" class="popup" role="dialog" aria-modal="true" aria-labelledby="popup-titulo">
+      <button class="icono-cerrar" type="button" data-accion="cerrar-popup" aria-label="Cerrar">×</button>
+      <div id="popup-oferta">
+        <p class="kicker">Temporada de invierno</p>
+        <h2 id="popup-titulo">Un bono para el frío.</h2>
+        <p>15% en alimento, ropa y accesorios de esta temporada. Deja tu correo y el código queda listo para el pedido.</p>
+        <div class="ticket" aria-hidden="true">
+          <div>
+            <p class="kicker">Esta temporada</p>
+            <p>Alimento, ropa y accesorios</p>
+          </div>
+          <strong>15%</strong>
+        </div>
+        <form id="form-popup" class="formulario">
+          <label>Correo electrónico
+            <input name="correo" type="email" maxlength="80" autocomplete="email" required>
+          </label>
+          <label class="check">
+            <input name="acepto" type="checkbox" required>
+            <span>Acepto recibir el bono y las novedades de temporada.</span>
+          </label>
+          <p id="error-popup" class="error" hidden></p>
+          <button class="boton" type="submit">Quiero el bono</button>
+          <button class="boton texto" type="button" data-accion="cerrar-popup">Ahora no</button>
+        </form>
+        <p class="nota">En esta demostración el correo se guarda solo en tu navegador. No sale de esta página.</p>
+      </div>
+      <div id="popup-listo" hidden>
+        <p class="kicker">Listo</p>
+        <h2>Tu bono de invierno</h2>
+        <p class="codigo">INVIERNO15</p>
+        <p>Ya puede aplicarse al pedido. Son 15% sobre las doce piezas de la temporada.</p>
+        <a class="boton completo" href="#/catalogo" data-accion="cerrar-popup">Ver la colección</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="cajon-fondo" class="cajon-fondo" hidden>
+    <aside id="cajon" class="cajon" role="dialog" aria-modal="true" aria-labelledby="cajon-titulo">
+      <header class="cajon-cabecera">
+        <h2 id="cajon-titulo">Tu pedido</h2>
+        <button class="boton texto" type="button" data-accion="cerrar-cajon">Cerrar</button>
+      </header>
+      <div id="cajon-cuerpo"></div>
+    </aside>
+  </div>
+
+  <div id="aviso-vivo" class="solo-lectura" aria-live="polite"></div>
+  <script src="js/datos.js"></script>
+  <script src="js/tienda.js"></script>
+</body>
+</html>
